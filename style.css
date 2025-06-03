@@ -3,56 +3,71 @@ body {
   background: #44172B;
   color: #fff;
   font-family: 'Epilogue', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   min-height: 100vh;
-  position: relative;
 }
 
-.visual-layout {
-  position: relative;
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
   width: 100%;
-  height: 100vh;
-  overflow: hidden;
 }
 
-.logo-img {
-  position: absolute;
-  top: 30px;
-  right: 40px;
-  width: 320px;
-  height: auto;
+.signup {
+  background: #F88FAB;
+  width: 400px;
+  border-radius: 20px;
+  padding: 50px 30px 60px;
+  color: #111;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.3);
 }
 
-.waitlist-img {
-  position: absolute;
-  bottom: 10%;
-  left: 10%;
-  width: 300px;
-  height: auto;
+.form-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #111;
 }
 
-@media (max-width: 768px) {
-  .logo-img {
-    width: 240px;
-    top: 20px;
-    right: 20px;
-  }
-
-  .waitlist-img {
-    width: 280px;
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: 5%;
-  }
+.custom-input {
+  padding: 12px;
+  border: 1px solid #44172B;
+  border-radius: 8px;
+  font-family: 'Epilogue', sans-serif;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 114%;
+  letter-spacing: -0.04em;
+  color: #44172B;
+  background: white;
+  opacity: 1;
 }
 
-@media (max-width: 480px) {
-  .logo-img {
-    width: 200px;
-    top: 15px;
-    right: 15px;
-  }
+.custom-input::placeholder {
+  color: #44172B;
+  opacity: 0.58;
+  font-weight: 600;
+}
 
-  .waitlist-img {
-    width: 260px;
-  }
+.custom-button {
+  padding: 12px;
+  background-color: #000;
+  color: white;
+  font-family: 'Epilogue', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.subtext {
+  font-size: 0.9rem;
+  color: #111;
+  margin-bottom: 4px;
 }
