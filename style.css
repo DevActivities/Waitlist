@@ -157,6 +157,7 @@ body {
   .waitlist-form__content {
     padding: 24px;
     min-height: auto;
+    gap: 0;
   }
 
   .waitlist-form__title {
@@ -167,6 +168,10 @@ body {
   .waitlist-form__input {
     font-size: 1rem;
     margin-bottom: 12px;
+  }
+
+  .waitlist-form__input:last-of-type {
+    margin-bottom: 0;
   }
 
   .waitlist-form__middle {
@@ -185,7 +190,7 @@ body {
 
   .waitlist-form__brand-prompt {
     font-size: 0.9rem;
-    margin-bottom: 12px;
+    margin-bottom: 8px;
   }
 }
 
