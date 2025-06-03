@@ -16,8 +16,8 @@
 
   <main class="container">
     <section class="signup">
-      <form action="https://docs.google.com/forms/d/e/1FAIpQLSf2A7cO_fn6peFU8M-OrQ6ZbhsFbzYLHCSBOHMFWkc1hTVhgQ/formResponse" method="POST" target="hidden_iframe" onsubmit="submitted=true;">
-        <h2>Join our waitlist. It’s the only time you’ll wait.</h2>
+      <form id="waitlistForm" onsubmit="handleSubmit(event)">
+        <h2>Join our waitlist. It's the only time you'll wait.</h2>
         <label for="email" class="sr-only">Enter your email address</label>
         <input type="email" name="entry.1395615317" id="email" placeholder="Enter your email address" required />
 
@@ -33,14 +33,30 @@
   <!-- Silent form target -->
   <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
   <script>
-    let submitted = false;
-    document.querySelector('form').addEventListener('submit', function () {
-      submitted = true;
-      setTimeout(() => {
-        alert("Thanks! You’re on the waitlist.");
-        document.querySelector('form').reset();
-      }, 500);
-    });
+    async function handleSubmit(event) {
+      event.preventDefault();
+      
+      const form = event.target;
+      const email = form.querySelector('#email').value;
+      const brand = form.querySelector('#brand').value;
+      
+      const formData = new FormData();
+      formData.append('entry.1395615317', email);
+      
+      try {
+        await fetch('https://docs.google.com/forms/d/e/1FAIpQLSf2A7cO_fn6peFU8M-OrQ6ZbhsFbzYLHCSBOHMFWkc1hTVhgQ/formResponse', {
+          method: 'POST',
+          mode: 'no-cors',
+          body: formData
+        });
+        
+        alert("Thanks! You're on the waitlist.");
+        form.reset();
+      } catch (error) {
+        console.error('Error submitting form:', error);
+        alert('There was an error submitting the form. Please try again.');
+      }
+    }
   </script>
 </body>
 </html>
