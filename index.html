@@ -16,22 +16,31 @@
 
   <main class="container">
     <section class="signup">
-      <form action="https://docs.google.com/forms/d/e/1FAIpQLSf2A7cO_fn6peFU8M-OrQ6ZbhsFbzYLHCSBOHMFWkc1hTVhgQ/formResponse" method="POST" target="_blank">
+      <form action="https://docs.google.com/forms/d/e/1FAIpQLSf2A7cO_fn6peFU8M-OrQ6ZbhsFbzYLHCSBOHMFWkc1hTVhgQ/formResponse" method="POST" target="hidden_iframe" onsubmit="submitted=true;">
         <h2>Join our waitlist. It’s the only time you’ll wait.</h2>
-        
-        <!-- Email Field -->
         <label for="email" class="sr-only">Enter your email address</label>
         <input type="email" name="entry.1395615317" id="email" placeholder="Enter your email address" required />
-        
-        <!-- Button -->
+
         <button type="submit">Sign up</button>
-        
-        <!-- Brand Feedback -->
+
         <p class="subtext">Have a favourite brand? let us know so we can tell them to get onboard</p>
         <label for="brand" class="sr-only">Your favourite brand</label>
         <input type="text" name="brand" id="brand" placeholder="Your favourite brand" />
       </form>
     </section>
   </main>
+
+  <!-- Silent form target -->
+  <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
+  <script>
+    let submitted = false;
+    document.querySelector('form').addEventListener('submit', function () {
+      submitted = true;
+      setTimeout(() => {
+        alert("Thanks! You’re on the waitlist.");
+        document.querySelector('form').reset();
+      }, 500);
+    });
+  </script>
 </body>
 </html>
