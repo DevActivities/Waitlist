@@ -1,0 +1,162 @@
+body {
+  margin: 0;
+  background: #1A001A;
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  position: relative;
+}
+
+header {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  text-align: right;
+}
+
+header h1 {
+  color: #FF5FA2;
+  font-family: 'Comic Sans MS', Impact, sans-serif;
+  font-size: 3rem;
+  line-height: 1;
+  margin: 0;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+
+.signup {
+  background: #FF5FA2;
+  width: 300px;
+  border-radius: 20px;
+  padding: 30px 20px 40px;
+  position: relative;
+  color: #111;
+}
+
+.signup form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.signup h2 {
+  margin-top: 0;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.signup input {
+  padding: 8px;
+  border: none;
+  border-radius: 5px;
+}
+
+.signup button {
+  background: #000;
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.signup .subtext {
+  font-size: 0.8rem;
+}
+
+.sr-only {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.stick-figure {
+  position: relative;
+  width: 40px;
+  height: 60px;
+}
+
+.stick-figure .head {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #666;
+  margin: 0 auto;
+}
+
+.stick-figure .body {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  width: 2px;
+  height: 25px;
+  background: #fff;
+  transform: translateX(-50%);
+}
+
+.stick-figure .arm {
+  position: absolute;
+  top: 25px;
+  left: 50%;
+  width: 20px;
+  height: 2px;
+  background: #ccc;
+  transform-origin: left top;
+}
+
+.stick-figure .arm.left { transform: translateX(-50%) rotate(-45deg); }
+.stick-figure .arm.right { transform: translateX(-50%) rotate(45deg); }
+
+.stick-figure .leg {
+  position: absolute;
+  top: 45px;
+  left: 50%;
+  width: 20px;
+  height: 2px;
+  background: #ccc;
+  transform-origin: left top;
+}
+
+.stick-figure .leg.left { transform: translateX(-50%) rotate(-45deg); }
+.stick-figure .leg.right { transform: translateX(-50%) rotate(45deg); }
+
+.reclined {
+  position: absolute;
+  top: -40px;
+  left: 50%;
+  transform: translateX(-50%) rotate(15deg);
+}
+
+.reclined .head {
+  background: #FF5FA2;
+  box-shadow: 0 0 6px #FF5FA2;
+}
+
+.reclined .arm,
+.reclined .leg,
+.reclined .body {
+  background: #fff;
+}
+
+.queue {
+  display: flex;
+  gap: 20px;
+}
+
+.queue .stick-figure .arm,
+.queue .stick-figure .leg {
+  background: #aaa;
+}
